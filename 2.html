@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ujian FUndamental soal no.2</title>
+    <style>
+        #box{
+            width: 350px;
+            height: auto;
+            border: solid 2px black;
+            border-collapse: collapse;
+            padding: 25px;
+            padding-top: 25px;
+            text-align:left;
+            align-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soal no.2</h1>
+    <p>Eldwin Harsono</p>
+    <center>
+        <div id="box">
+            <center><h2>Drawing Tool</h2></center>
+            <p>1. Persegi</p>
+            <p>2. Segitiga Siku2 Rata Kiri</p>
+            <p>3. Segitiga Siku2 Rata Kanan</p>
+            <br>
+            Bangunan:
+            <br>
+            <select class="Bangunan">
+                <option value="0">-select-</option>
+                <option value="1">Persegi</option>
+                <option value="2">Segitiga Siku2 Rata Kiri</option>
+                <option value="3">Segitiga Siku2 Rata Kanan</option>
+            </select>
+            <br>
+            <br>
+            Ukuran:
+            <br>
+            <input type="number" placeholder="Please input number" id="ukuran">
+            <br>
+            <br>
+            <button value="submit" onclick="Submit()">Submit</button>
+            <br>
+            <p id='spacebangunan' onclick="Submit()"></p>
+            <p id="error" style="color: red"></p>
+              
+        </div>
+    </center>
+
+    <script>
+        
+        // function printBangunan(){
+        //     document.getElementById('spacebangunan').innerHTML = output
+        // }
+        function printSegitigasikukanan(jumlahBaris){
+            var jumlahBaris = document.getElementById('ukuran').value
+                var output = ''
+                for(row = 0; row<jumlahBaris; row++){
+                    for(column = 0; column<=row; column--){
+                         output += ' # '
+                    }
+                    output += '<br>'
+                }
+                document.getElementById('spacebangunan')[0].innerHTML =output
+        }
+
+        function printSegitigasikukiri(){
+        var jumlahBaris = document.getElementById('ukuran').value
+            function printSegitigasikukiri(jumlahBaris){
+                var output = ''
+                for(row = 0; row<jumlahBaris; row++){
+                    for(column = 0; column<=row; column++){
+                         output += ' # '
+                    }
+                    output += '<br>'
+                }
+                document.getElementById('spacebangunan').innerHTML = output
+            }
+        }
+        printPersegi(){
+            var jumlahBaris = document.getElementById('ukuran').value
+            function printPersegi(jumlahBaris){
+                var output = ''
+                for(row = 0; row<jumlahBaris; row++){
+                    output += ' # '
+                    output += '<br>'
+                }
+                document.getElementById('spacebangunan').innerHTML = printPersegi()
+            }
+        }
+        
+        function Submit(){
+        var jenis = document.getElementsByClassName('Bangunan').value
+        if(jenis == 1){
+            printPersegi()
+        }else if(jenis == 2){
+           printSegitigasikukiri(jumlahBaris)
+        }else if(jenis == 3){
+            printSegitigasikukanan(jumlahBaris)
+        }else if(jenis === 0){
+            document.getElementById('error').innerHTML = 'Please input selection'
+        }
+    }
+
+    </script>
+        
+</body>
+</html>
